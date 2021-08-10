@@ -10,7 +10,7 @@ resource "aws_vpc" "vpc_id" {
   }
 
   tags = "${
-    map(
+    tomap(
      "Name", "terraform-eks-${terraform.workspace}",
      "kubernetes.io/cluster/${var.eks_cluster_name}-${terraform.workspace}", "shared",
     )
@@ -31,7 +31,7 @@ resource "aws_vpc_dhcp_options" "vpc_dhcp_id" {
   domain_name         = "us-west-2.compute.internal"
   domain_name_servers = ["AmazonProvidedDNS"]
 
-  tags {
+  tags = {
     Name = "${terraform.workspace}"
   }
 }
