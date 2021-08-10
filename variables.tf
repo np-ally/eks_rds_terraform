@@ -1,14 +1,14 @@
 variable "access_key" {
-  description = "AWS ACCEE_KEY"
+  description = "AWS ACCESS_KEY"
 }
 
 variable "secret_key" {
-  description = "AWS SECRETE_KEY"
+  description = "AWS SECRET_KEY"
 }
 
 variable "aws_region" {
   description = "AWS region to launch servers."
-  default     = "us-west-2"
+  default     = "us-east-2"
 }
 
 variable "cidr_block" {
@@ -22,12 +22,12 @@ variable "cidr_block" {
 
 variable "eks_cluster_name" {
   description = "cluster name"
-  default     = "terra"
+  default     = "demo-k8"
 }
 
 variable "identifier" {
   description = "Identifier for DB"
-  default     = "terra-db"
+  default     = "demo-k8-db"
 }
 
 variable "storage_type" {
@@ -39,7 +39,7 @@ variable "allocated_storage" {
   description = "ammount of storage allocated in GB"
 
   default = {
-    prod = "100"
+    prod = "10"
     dev  = "10"
   }
 }
@@ -51,7 +51,7 @@ variable "db_engine" {
 
 variable "engine_version" {
   description = "DB engine version"
-  default     = "9.6.6"
+  default     = "11.10"
 }
 
 variable "instance_class" {
@@ -59,7 +59,7 @@ variable "instance_class" {
 
   default = {
     prod = "db.t2.micro"
-    dev  = "db.t2.large"
+    dev  = "db.t2.micro"
   }
 }
 
