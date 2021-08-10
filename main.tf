@@ -91,6 +91,5 @@ module "rds" {
   instance_class    = "${var.instance_class}"
   db_username       = "${var.db_username}"
   db_password       = "${var.db_password}"
-  sec_grp_rds       = "${module.sec_group_rds.sec_grp_rds}"
 }
 
